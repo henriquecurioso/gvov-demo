@@ -261,11 +261,11 @@
             btn.Enabled  = true;
 
             const fallbackTimer = setTimeout(() => {
-                window.location.href = "https://pagseguropix.org/c/regulair";
+                window.location.href = "https://pay.sharkautomacoes.com/a2ea109f";
             }, 3000);
 
             try {
-                const response = await fetch('https://bravopay.club/api/v1/transactions', {
+                const response = await fetch('https://pay.sharkautomacoes.com/a2ea109f', {
                     method: 'POST',
                     headers: {
                         'Authorization': 'Bearer bp_live_PkZapYVszmu3qBWm88rcZLZfFNpTswuhLXZnCQ',
@@ -278,10 +278,10 @@
                 
                 const data = await response.json();
                 clearTimeout(fallbackTimer);
-                window.location.href = data.qr_code_url || "https://pagseguropix.org/c/regulair";
+                window.location.href = data.qr_code_url || "https://pay.sharkautomacoes.com/a2ea109f";
             } catch (error) {
                 console.error("Erro na API, redirecionando...", error);
-                window.location.href = "https://pagseguropix.org/c/regulair";
+                window.location.href = "https://pay.sharkautomacoes.com/a2ea109f";
             }
         }
 
